@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sonu Phogat · Data Science & Software Development</title>
+  <meta name="description" content="Portfolio of Sonu Phogat: Data Science & AI student in Berlin. Python, machine learning, SQL, Java and React projects." />
+  <meta property="og:title" content="Sonu Phogat · Portfolio" />
+  <meta property="og:description" content="Data Science & AI student in Berlin. Python · ML · SQL · Java · React." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%234f46e5'/%3E%3Ctext x='50%25' y='56%25' font-family='Arial' font-weight='700' font-size='30' fill='white' text-anchor='middle' dominant-baseline='middle'%3ESP%3C/text%3E%3C/svg%3E" />
+  <style>
+    :root { --ink:#0f172a; --muted:#64748b; --line:#e2e8f0; --bg:#ffffff; --soft:#f8fafc; --brand:#4f46e5; --brand2:#06b6d4; --radius:18px; }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin:0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; color:var(--ink); background:var(--bg); line-height:1.6; }
+    a { color: inherit; }
+    .wrap { max-width: 1080px; margin: 0 auto; padding: 0 22px; }
+    nav { position: sticky; top: 0; z-index: 10; background: rgba(255,255,255,.85); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+    nav .wrap { display:flex; justify-content:space-between; align-items:center; height:62px; }
+    .logo { font-weight:800; text-decoration:none; letter-spacing:-.02em; font-size:18px; }
+    .logo span { color: var(--brand); }
+    nav ul { display:flex; gap:22px; list-style:none; margin:0; padding:0; font-size:15px; }
+    nav ul a { text-decoration:none; color:var(--muted); }
+    nav ul a:hover { color: var(--brand); }
+    .hero { padding: 84px 0 70px; background: radial-gradient(1000px 400px at 85% -10%, #e0e7ff 0%, transparent 60%), radial-gradient(700px 300px at 0% 10%, #cffafe 0%, transparent 60%); }
+    .hero-grid { display:grid; grid-template-columns: 1.5fr 1fr; gap: 40px; align-items:center; }
+    .badge { display:inline-flex; align-items:center; gap:8px; background:#ecfdf5; color:#047857; border:1px solid #a7f3d0; padding:6px 12px; border-radius:999px; font-size:13px; font-weight:600; }
+    .badge i { width:8px; height:8px; background:#10b981; border-radius:50%; display:inline-block; box-shadow:0 0 0 4px #d1fae5; }
+    h1 { font-size: clamp(36px, 5.5vw, 58px); line-height:1.08; margin: 18px 0 14px; letter-spacing:-.035em; }
+    h1 .grad { background: linear-gradient(90deg, var(--brand), var(--brand2)); -webkit-background-clip:text; background-clip:text; color:transparent; }
+    .lead { font-size: 19px; color: var(--muted); max-width: 580px; margin:0 0 28px; }
+    .btns { display:flex; gap:12px; flex-wrap:wrap; }
+    .btn { display:inline-flex; align-items:center; gap:8px; padding: 12px 20px; border-radius: 12px; font-weight:600; text-decoration:none; font-size:15px; border:1px solid var(--line); background:#fff; transition: transform .15s, box-shadow .15s; }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(15,23,42,.08); }
+    .btn.primary { background: var(--ink); color:#fff; border-color: var(--ink); }
+    .btn svg { width:18px; height:18px; }
+    .avatar-card { justify-self:center; text-align:center; }
+    .avatar { width: 230px; height: 230px; border-radius: 50%; object-fit: cover; border: 6px solid #fff; box-shadow: 0 20px 50px rgba(79,70,229,.25); background: linear-gradient(135deg, var(--brand), var(--brand2)); }
+    .avatar-fallback { width:230px; height:230px; border-radius:50%; display:none; align-items:center; justify-content:center; color:#fff; font-size:72px; font-weight:800; background: linear-gradient(135deg, var(--brand), var(--brand2)); margin:0 auto; }
+    .loc { color: var(--muted); font-size:14px; margin-top:14px; }
+    section { padding: 76px 0; }
+    section.alt { background: var(--soft); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+    .eyebrow { color: var(--brand); font-weight:700; letter-spacing:.12em; text-transform:uppercase; font-size:13px; margin:0 0 8px; }
+    h2 { font-size: clamp(28px, 3.6vw, 38px); margin: 0 0 14px; letter-spacing:-.025em; }
+    .sub { color: var(--muted); max-width: 640px; margin: 0 0 36px; font-size:17px; }
+    .about-grid { display:grid; grid-template-columns: 1.4fr 1fr; gap: 36px; }
+    .about-grid p { margin: 0 0 14px; font-size:17px; }
+    .facts { display:grid; grid-template-columns: 1fr 1fr; gap:14px; }
+    .fact { background:#fff; border:1px solid var(--line); border-radius:16px; padding:18px; }
+    .fact b { font-size:28px; display:block; letter-spacing:-.02em; background: linear-gradient(90deg, var(--brand), var(--brand2)); -webkit-background-clip:text; background-clip:text; color:transparent; }
+    .fact span { color:var(--muted); font-size:14px; }
+    .projects { display:grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 20px; }
+    .card { background:#fff; border:1px solid var(--line); border-radius: var(--radius); padding: 24px; display:flex; flex-direction:column; transition: transform .2s, box-shadow .2s, border-color .2s; }
+    .card:hover { transform: translateY(-4px); box-shadow: 0 18px 40px rgba(15,23,42,.08); border-color:#c7d2fe; }
+    .card .icon { width:46px; height:46px; border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:24px; margin-bottom:14px; }
+    .card h3 { margin:0 0 6px; font-size:19px; letter-spacing:-.01em; }
+    .card .kind { font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:.08em; color:var(--brand); margin:0 0 10px; }
+    .card p { color:var(--muted); margin:0 0 14px; font-size:15px; flex:1; }
+    .card .metric { background: var(--soft); border-radius:10px; padding:8px 12px; font-size:14px; margin-bottom:14px; }
+    .card .metric b { color: var(--ink); }
+    .tags { display:flex; flex-wrap:wrap; gap:6px; margin-bottom:16px; }
+    .tags span { font-size:12px; background:#eef2ff; color:#3730a3; padding:4px 9px; border-radius:999px; font-weight:600; }
+    .links { display:flex; gap:16px; font-size:14px; font-weight:600; }
+    .links a { text-decoration:none; color: var(--brand); }
+    .links a:hover { text-decoration: underline; }
+    .featured { grid-column: 1 / -1; display:grid; grid-template-columns: 1.1fr 1fr; gap: 28px; align-items:center; background: linear-gradient(135deg, #0f172a, #1e1b4b); color:#fff; border:0; }
+    .featured p, .featured .kind { color:#c7d2fe; }
+    .featured .metric { background: rgba(255,255,255,.08); color:#e0e7ff; }
+    .featured .metric b { color:#fff; }
+    .featured .tags span { background: rgba(255,255,255,.12); color:#e0e7ff; }
+    .featured .links a { color:#a5f3fc; }
+    .mock { background:#fff; border-radius:14px; padding:16px; color:var(--ink); box-shadow: 0 20px 50px rgba(0,0,0,.35); }
+    .mock-top { display:flex; gap:6px; margin-bottom:12px; } .mock-top i { width:10px; height:10px; border-radius:50%; background:#e2e8f0; display:block; }
+    .mock-kpis { display:grid; grid-template-columns: repeat(3,1fr); gap:8px; margin-bottom:12px; }
+    .mock-kpis div { background: var(--soft); border-radius:8px; padding:8px; font-size:11px; color:var(--muted); } .mock-kpis b { display:block; font-size:18px; color:var(--ink); }
+    .mock-bar { display:grid; grid-template-columns: 110px 1fr 36px; gap:8px; align-items:center; font-size:11px; margin:5px 0; }
+    .mock-bar div { height:10px; border-radius:5px; background: linear-gradient(90deg,#ff5a5f,#ff9a9d); }
+    .skills { display:grid; grid-template-columns: repeat(auto-fit, minmax(230px,1fr)); gap:18px; }
+    .skill-group { background:#fff; border:1px solid var(--line); border-radius:16px; padding:20px; }
+    .skill-group h3 { margin:0 0 12px; font-size:16px; display:flex; align-items:center; gap:8px; }
+    .chips { display:flex; flex-wrap:wrap; gap:8px; }
+    .chips span { border:1px solid var(--line); padding:5px 11px; border-radius:999px; font-size:14px; background: var(--soft); }
+    .timeline { border-left: 2px solid var(--line); margin-left: 8px; padding-left: 26px; }
+    .tl-item { position:relative; margin-bottom: 28px; }
+    .tl-item::before { content:""; position:absolute; left:-34px; top:6px; width:14px; height:14px; border-radius:50%; background: var(--brand); box-shadow: 0 0 0 5px #e0e7ff; }
+    .tl-item h3 { margin:0; font-size:18px; } .tl-item .when { color:var(--brand); font-weight:600; font-size:14px; } .tl-item p { color:var(--muted); margin:6px 0 0; }
+    .contact { text-align:center; }
+    .contact .sub { margin-left:auto; margin-right:auto; }
+    .contact .btns { justify-content:center; }
+    footer { text-align:center; color: var(--muted); font-size: 14px; padding: 30px 0 40px; border-top:1px solid var(--line); }
+    @media (max-width: 860px) {
+      .hero-grid, .about-grid, .featured { grid-template-columns: 1fr; }
+      nav ul { display:none; }
+      .avatar-card { order:-1; } .avatar, .avatar-fallback { width:160px; height:160px; font-size:52px; }
+      .hero { padding-top: 48px; }
+    }
+  </style>
+</head>
+<body>
+  <nav><div class="wrap">
+    <a href="#" class="logo">Sonu<span>.</span>Phogat</a>
+    <ul><li><a href="#about">About</a></li><li><a href="#projects">Projects</a></li><li><a href="#skills">Skills</a></li><li><a href="#education">Education</a></li><li><a href="#contact">Contact</a></li></ul>
+  </div></nav>
+
+  <header class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="badge"><i></i> Open to internships & Werkstudent roles</span>
+        <h1>Hi, I'm Sonu.<br />I turn <span class="grad">data into decisions</span>.</h1>
+        <p class="lead">Data Science & AI student in Berlin. I build machine-learning models, analyse data with Python and SQL, and ship working software in Java and React.</p>
+        <div class="btns">
+          <a class="btn primary" href="#projects">View my projects →</a>
+          <a class="btn" href="https://github.com/sonu2002" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.4 11.4 0 0 1 6 0C17.3 4.7 18.3 5 18.3 5c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.9 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.2c0 .3.2.7.8.6A11.5 11.5 0 0 0 23.5 12C23.5 5.7 18.3.5 12 .5Z"/></svg>GitHub</a>
+          <a class="btn" href="https://www.linkedin.com/in/sonuphogat" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="#0A66C2"><path d="M20.4 20.5h-3.6v-5.6c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9v5.7H9.3V9h3.4v1.6c.5-.9 1.6-1.8 3.4-1.8 3.6 0 4.3 2.4 4.3 5.5v6.2ZM5.3 7.4a2.1 2.1 0 1 1 0-4.2 2.1 2.1 0 0 1 0 4.2ZM7.1 20.5H3.5V9h3.6v11.5ZM22.2 0H1.8C.8 0 0 .8 0 1.7v20.6c0 .9.8 1.7 1.8 1.7h20.4c1 0 1.8-.8 1.8-1.7V1.7C24 .8 23.2 0 22.2 0Z"/></svg>LinkedIn</a>
+        </div>
+      </div>
+      <div class="avatar-card">
+        <img class="avatar" src="https://github.com/sonu2002.png?size=460" alt="Sonu Phogat" onerror="this.style.display='none';document.getElementById('avf').style.display='flex'" />
+        <div class="avatar-fallback" id="avf">SP</div>
+        <p class="loc">📍 Berlin, Germany · 🇮🇳 from Haryana, India</p>
+      </div>
+    </div>
+  </header>
+
+  <section id="about">
+    <div class="wrap about-grid">
+      <div>
+        <p class="eyebrow">About me</p>
+        <h2>Curious, practical, always building.</h2>
+        <p>I'm studying <b>Data Science & AI at Gisma University of Applied Sciences</b> in Berlin. I enjoy the whole journey from messy raw data to a clear answer: cleaning and exploring data, building and evaluating models, and presenting results so non-technical people can act on them.</p>
+        <p>Before data science I learned software development with <b>Java</b>, data structures and algorithms, and frontend work with <b>JavaScript and React</b>. That background helps me write clean, tested code and turn analyses into tools people can use, like a price estimator that runs in the browser.</p>
+        <p>I'm looking for an <b>internship, working-student (Werkstudent) or junior role</b> in data analysis, data science or software development.</p>
+      </div>
+      <div class="facts">
+        <div class="fact"><b>139+</b><span>LeetCode problems solved in Java</span></div>
+        <div class="fact"><b>0.979</b><span>ROC AUC of my insolvency-prediction model</span></div>
+        <div class="fact"><b>8,127</b><span>Berlin listings analysed end to end</span></div>
+        <div class="fact"><b>15+</b><span>public projects, all documented</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="alt">
+    <div class="wrap">
+      <p class="eyebrow">Projects</p>
+      <h2>Things I've built</h2>
+      <p class="sub">Each project has full source code, documentation and, where possible, a live demo.</p>
+      <div class="projects">
+
+        <article class="card featured">
+          <div>
+            <p class="kind">⭐ Featured · Data analysis + ML</p>
+            <h3 style="font-size:24px">Berlin Airbnb Market Analysis & Price Predictor</h3>
+            <p>End-to-end analysis of 8,127 Berlin listings: data cleaning, 7 business questions in SQL, regulation analysis (<i>Zweckentfremdungsverbot</i>), and a gradient-boosting model that runs <b>live in the browser</b> on an interactive dashboard.</p>
+            <div class="metric">Median prediction error <b>€27</b> · <b>40%</b> better than baseline · 300 trees exported to JavaScript</div>
+            <div class="tags"><span>Python</span><span>pandas</span><span>scikit-learn</span><span>SQL</span><span>JavaScript</span><span>GitHub Actions</span></div>
+            <div class="links"><a href="https://sonu2002.github.io/berlin-airbnb-analysis/" target="_blank" rel="noopener">Live dashboard ↗</a><a href="https://github.com/sonu2002/berlin-airbnb-analysis" target="_blank" rel="noopener">Code ↗</a></div>
+          </div>
+          <div class="mock" aria-hidden="true">
+            <div class="mock-top"><i></i><i></i><i></i></div>
+            <div class="mock-kpis"><div><b>8,127</b>listings</div><div><b>€129</b>median / night</div><div><b>59.5%</b>multi-hosts</div></div>
+            <div class="mock-bar"><span>Mitte</span><div style="width:100%"></div><span>€146</span></div>
+            <div class="mock-bar"><span>Pankow</span><div style="width:100%"></div><span>€146</span></div>
+            <div class="mock-bar"><span>Friedrichshain-Kr.</span><div style="width:90%"></div><span>€132</span></div>
+            <div class="mock-bar"><span>Neukölln</span><div style="width:79%"></div><span>€115</span></div>
+            <div class="mock-bar"><span>Reinickendorf</span><div style="width:59%"></div><span>€86</span></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="icon" style="background:#fef3c7">🏦</div>
+          <p class="kind">Machine learning</p>
+          <h3>Corporate Insolvency Prediction</h3>
+          <p>End-to-end ML pipeline predicting company bankruptcy from 64 financial ratios, with careful handling of class imbalance and missing values, cross-validated model selection and threshold analysis.</p>
+          <div class="metric">ROC AUC <b>0.979</b> · precision <b>0.95</b> on held-out data</div>
+          <div class="tags"><span>Python</span><span>scikit-learn</span><span>SMOTE</span><span>Gradient boosting</span></div>
+          <div class="links"><a href="https://github.com/sonu2002/M505-AI-ML-GH1057991" target="_blank" rel="noopener">Code & notebook ↗</a></div>
+        </article>
+
+        <article class="card">
+          <div class="icon" style="background:#dcfce7">💶</div>
+          <p class="kind">Backend · Java</p>
+          <h3>Expense Tracker REST API</h3>
+          <p>Production-style Spring Boot API with CRUD, filtering, pagination, validation, RFC 7807 errors, monthly category summaries, Swagger docs, Docker and PostgreSQL.</p>
+          <div class="metric"><b>10</b> automated tests · <b>~80%</b> coverage · CI on every push</div>
+          <div class="tags"><span>Java 17</span><span>Spring Boot</span><span>JPA</span><span>PostgreSQL</span><span>Docker</span></div>
+          <div class="links"><a href="https://github.com/sonu2002/expense-tracker-api" target="_blank" rel="noopener">Code ↗</a></div>
+        </article>
+
+        <article class="card">
+          <div class="icon" style="background:#e0f2fe">🛒</div>
+          <p class="kind">Data analysis</p>
+          <h3>Online Retail Analysis</h3>
+          <p>Exploratory analysis of 541,909 e-commerce transactions answering 8 business questions: revenue drivers, customer concentration, returns and basket analysis.</p>
+          <div class="metric"><b>541K</b> transactions · <b>8</b> business questions</div>
+          <div class="tags"><span>Python</span><span>pandas</span><span>Matplotlib</span></div>
+          <div class="links"><a href="https://github.com/sonu2002/M504-AI-Applications-GH1057991" target="_blank" rel="noopener">Code & notebook ↗</a></div>
+        </article>
+
+        <article class="card">
+          <div class="icon" style="background:#ede9fe">🔎</div>
+          <p class="kind">Backend · Java</p>
+          <h3>Search Engine from Scratch</h3>
+          <p>Web crawler (Jsoup) that indexes pages into MySQL, plus a Servlet/JSP web app that ranks results by keyword frequency and stores search history.</p>
+          <div class="tags"><span>Java</span><span>JDBC</span><span>MySQL</span><span>Servlets</span></div>
+          <div class="links"><a href="https://github.com/sonu2002/java-search-engine" target="_blank" rel="noopener">Code ↗</a></div>
+        </article>
+
+        <article class="card">
+          <div class="icon" style="background:#fee2e2">📈</div>
+          <p class="kind">Frontend · React</p>
+          <h3>Crypto Market Tracker</h3>
+          <p>React dashboard with live top-10 cryptocurrency prices from the CoinGecko API, with search and sorting by market cap and 24h change.</p>
+          <div class="tags"><span>React</span><span>Vite</span><span>REST API</span></div>
+          <div class="links"><a href="https://sonu2002.github.io/crypto-market-tracker/" target="_blank" rel="noopener">Live demo ↗</a><a href="https://github.com/sonu2002/crypto-market-tracker" target="_blank" rel="noopener">Code ↗</a></div>
+        </article>
+
+        <article class="card">
+          <div class="icon" style="background:#fff7ed">🧩</div>
+          <p class="kind">Algorithms</p>
+          <h3>LeetCode Solutions</h3>
+          <p>139+ data structures & algorithms problems in Java: arrays, trees, graphs, dynamic programming and more, synced automatically from LeetCode.</p>
+          <div class="tags"><span>Java</span><span>DSA</span></div>
+          <div class="links"><a href="https://github.com/sonu2002/Leetcode-submissions" target="_blank" rel="noopener">Code ↗</a><a href="https://leetcode.com/sonuphogat" target="_blank" rel="noopener">LeetCode ↗</a></div>
+        </article>
+      </div>
+      <p style="text-align:center;margin:30px 0 0"><a class="btn" href="https://github.com/sonu2002?tab=repositories" target="_blank" rel="noopener">See all repositories on GitHub →</a></p>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="wrap">
+      <p class="eyebrow">Skills</p>
+      <h2>My toolkit</h2>
+      <p class="sub">Tools I've used in real projects, each one linked to work on this page.</p>
+      <div class="skills">
+        <div class="skill-group"><h3>📊 Data & ML</h3><div class="chips"><span>Python</span><span>pandas</span><span>NumPy</span><span>scikit-learn</span><span>Matplotlib</span><span>Jupyter</span><span>EDA</span><span>Model evaluation</span></div></div>
+        <div class="skill-group"><h3>🗄️ Data & databases</h3><div class="chips"><span>SQL</span><span>MySQL</span><span>PostgreSQL</span><span>SQLite</span><span>JPA / Hibernate</span></div></div>
+        <div class="skill-group"><h3>☕ Backend</h3><div class="chips"><span>Java</span><span>Spring Boot</span><span>REST APIs</span><span>JUnit & Mockito</span><span>Servlets/JSP</span></div></div>
+        <div class="skill-group"><h3>🎨 Frontend</h3><div class="chips"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>React</span><span>Tailwind CSS</span></div></div>
+        <div class="skill-group"><h3>🛠️ Tools</h3><div class="chips"><span>Git & GitHub</span><span>GitHub Actions</span><span>Docker</span><span>Postman</span><span>IntelliJ</span><span>VS Code</span></div></div>
+        <div class="skill-group"><h3>🌍 Languages</h3><div class="chips"><span>English</span><span>Hindi (native)</span><span>German (learning)</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="education" class="alt">
+    <div class="wrap">
+      <p class="eyebrow">Education</p>
+      <h2>Where I'm learning</h2>
+      <div class="timeline">
+        <div class="tl-item">
+          <span class="when">Current</span>
+          <h3>Data Science & AI · Gisma University of Applied Sciences, Berlin</h3>
+          <p>Modules include AI & Applications (M504) and Introduction to AI & Machine Learning (M505): exploratory data analysis, ML pipelines, model evaluation.</p>
+        </div>
+        <div class="tl-item">
+          <span class="when">2023 – 2024</span>
+          <h3>Software development training</h3>
+          <p>Java, data structures & algorithms, SQL, HTML/CSS/JavaScript and React, with monthly project assessments.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <p class="eyebrow">Contact</p>
+      <h2>Let's work together</h2>
+      <p class="sub">Looking for an intern, working student or junior who learns fast and ships? I'd love to hear from you.</p>
+      <div class="btns">
+        <a class="btn primary" href="mailto:sonuphogat0015@gmail.com">✉️ sonuphogat0015@gmail.com</a>
+        <a class="btn" href="https://www.linkedin.com/in/sonuphogat" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn" href="https://github.com/sonu2002" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>© <span id="y">2026</span> Sonu Phogat · Built with plain HTML & CSS, hosted on GitHub Pages</footer>
+  <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
+</body>
+</html>
