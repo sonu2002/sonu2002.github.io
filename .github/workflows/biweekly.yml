@@ -1,0 +1,68 @@
+# Runs on the 1st and 15th of every month (≈ every 2 weeks).
+#  1. Refreshes the live numbers on the portfolio (data.json): GitHub + LeetCode
+#  2. Opens a "Biweekly GitHub check-in" issue with your progress and a short to-do list.
+#     GitHub emails you about it, so it works like a reminder.
+# You can also run it any time: Actions tab → "Biweekly portfolio update" → Run workflow.
+name: Biweekly portfolio update
+
+on:
+  schedule:
+    - cron: "0 6 1,15 * *"   # 06:00 UTC = 07:00/08:00 Berlin
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: biweekly
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Fetch latest GitHub + LeetCode numbers
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          STATS_USER: ${{ github.repository_owner }}
+          LEETCODE_USER: sonuphogat0015
+          DATA_FILE: data.json
+          CHECKIN_FILE: ${{ runner.temp }}/checkin.md
+        run: python scripts/update_data.py
+
+      - name: Save new numbers to the website
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data.json
+          if git diff --cached --quiet; then
+            echo "Numbers unchanged."
+          else
+            git commit -m "Biweekly update: refresh live stats"
+            git push
+          fi
+
+      - name: Open the check-in issue (your reminder + to-do list)
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh label create checkin --color 8b5cf6 --description "Biweekly check-in" 2>/dev/null || true
+          # close older check-ins so only the newest one is open
+          for n in $(gh issue list --label checkin --state open --json number --jq '.[].number'); do
+            gh issue close "$n" --comment "Replaced by the newest check-in." || true
+          done
+          gh issue create \
+            --title "🗓️ Biweekly GitHub check-in: $(date -u +'%d %b %Y')" \
+            --body-file "${{ runner.temp }}/checkin.md" \
+            --label checkin \
+            --assignee "${{ github.repository_owner }}" \
+          || gh issue create \
+            --title "🗓️ Biweekly GitHub check-in: $(date -u +'%d %b %Y')" \
+            --body-file "${{ runner.temp }}/checkin.md"
