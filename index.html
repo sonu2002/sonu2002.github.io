@@ -417,7 +417,7 @@ footer{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#5f5a5
       <p class="sub reveal" style="margin-bottom:26px">Drag the sphere ✦ every tool on it is used in a real project on this page.</p>
       <div class="groups">
         <div class="group glass reveal"><h3><em>i.</em> BI & reporting</h3><div class="tags"><span>Power BI</span><span>Excel</span><span>Dashboards</span><span>MIS reporting</span><span>KPIs</span></div></div>
-        <div class="group glass reveal" style="--delay:.06s"><h3><em>ii.</em> Data science & ML</h3><div class="tags"><span>Python</span><span>pandas</span><span>NumPy</span><span>scikit-learn</span><span>Matplotlib</span><span>Jupyter</span></div></div>
+        <div class="group glass reveal" style="--delay:.06s"><h3><em>ii.</em> Data science & ML</h3><div class="tags"><span>Python</span><span>pandas</span><span>NumPy</span><span>scikit-learn</span><span>Matplotlib</span><span>Jupyter</span><span>Time series</span><span>RAG · LLMs</span><span>Embeddings</span><span>XAI</span><span>Geospatial</span></div></div>
         <div class="group glass reveal" style="--delay:.12s"><h3><em>iii.</em> Data & backend</h3><div class="tags"><span>SQL</span><span>PostgreSQL</span><span>MySQL</span><span>Java</span><span>Spring Boot</span><span>REST APIs</span></div></div>
         <div class="group glass reveal" style="--delay:.18s"><h3><em>iv.</em> Web & tools</h3><div class="tags"><span>JavaScript</span><span>React</span><span>HTML/CSS</span><span>Git</span><span>GitHub Actions</span><span>Docker</span></div></div>
       </div>
@@ -453,7 +453,62 @@ footer{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#5f5a5
 
       <article class="card half tilt reveal">
         <div class="in3d">
-          <div class="ico">01</div><div class="kind">Machine learning</div>
+          <div class="ico">01</div><div class="kind">New · GenAI · RAG</div>
+          <h3>EU AI Act Navigator</h3>
+          <p>Ask the EU AI Act a question in plain English and get the exact paragraphs that answer it, with citations. Compares keyword, semantic, hybrid and re-ranked retrieval on 50 verified questions; optional LLM answer that must cite its sources.</p>
+          <div class="metric">Hit@5 <b>94%</b> with re-ranker · <b>611</b> passages · runs on CPU</div>
+          <div class="ptags"><span>Python</span><span>Embeddings</span><span>BM25</span><span>LLM</span></div>
+          <div class="links"><a href="https://sonu2002.github.io/eu-ai-act-rag/" target="_blank" rel="noopener">Live demo ↗</a><a href="https://github.com/sonu2002/eu-ai-act-rag" target="_blank" rel="noopener">Code ↗</a></div>
+        </div>
+      </article>
+
+      <article class="card half tilt reveal" style="--delay:.08s">
+        <div class="in3d">
+          <div class="ico">02</div><div class="kind">New · Forecasting · MLOps</div>
+          <h3>Germany Electricity Forecast</h3>
+          <p>Day-ahead forecast of Germany's hourly power demand from official SMARD data, with 80% uncertainty bands. GitHub Actions downloads new data, re-trains and publishes the dashboard every morning.</p>
+          <div class="metric">MAPE <b>2.78%</b> · <b>42%</b> better than the naive baseline</div>
+          <div class="ptags"><span>Python</span><span>Time series</span><span>Boosting</span><span>CI/CD</span></div>
+          <div class="links"><a href="https://sonu2002.github.io/germany-energy-forecast/" target="_blank" rel="noopener">Live dashboard ↗</a><a href="https://github.com/sonu2002/germany-energy-forecast" target="_blank" rel="noopener">Code ↗</a></div>
+        </div>
+      </article>
+
+      <article class="card tilt reveal">
+        <div class="in3d">
+          <div class="ico">03</div><div class="kind">New · ML · Explainable AI</div>
+          <h3>Customer Churn + XAI</h3>
+          <p>Predicts which of 7,043 telecom customers will cancel, explains every prediction, and picks who should get a retention offer. What-if simulator in the browser.</p>
+          <div class="metric">AUC <b>0.842</b> · campaign profit <b>€40k</b> vs <b>−€656</b></div>
+          <div class="ptags"><span>Python</span><span>scikit-learn</span><span>XAI</span></div>
+          <div class="links"><a href="https://sonu2002.github.io/customer-churn-xai/" target="_blank" rel="noopener">Live ↗</a><a href="https://github.com/sonu2002/customer-churn-xai" target="_blank" rel="noopener">Code ↗</a></div>
+        </div>
+      </article>
+
+      <article class="card tilt reveal" style="--delay:.08s">
+        <div class="in3d">
+          <div class="ico">04</div><div class="kind">New · Geospatial · Open data</div>
+          <h3>Berlin Road Safety</h3>
+          <p>Every injury accident in Berlin 2019–2025 on an interactive map: hotspots, trends, districts and what makes an accident serious. Refreshes itself monthly.</p>
+          <div class="metric"><b>86,894</b> accidents · serious ones <b>−18%</b> since 2019</div>
+          <div class="ptags"><span>Python</span><span>Geo</span><span>Statistics</span></div>
+          <div class="links"><a href="https://sonu2002.github.io/berlin-road-safety/" target="_blank" rel="noopener">Live ↗</a><a href="https://github.com/sonu2002/berlin-road-safety" target="_blank" rel="noopener">Code ↗</a></div>
+        </div>
+      </article>
+
+      <article class="card tilt reveal" style="--delay:.16s">
+        <div class="in3d">
+          <div class="ico">05</div><div class="kind">New · BI · SQL</div>
+          <h3>Sales BI Dashboard</h3>
+          <p>1 million invoice lines modelled into a tested star schema with SQL in DuckDB: KPIs, cohort retention, RFM segments, data-quality report.</p>
+          <div class="metric"><b>£19.6M</b> revenue · top 20% of customers = <b>77%</b></div>
+          <div class="ptags"><span>SQL</span><span>DuckDB</span><span>BI</span></div>
+          <div class="links"><a href="https://sonu2002.github.io/sales-bi-dashboard/" target="_blank" rel="noopener">Live ↗</a><a href="https://github.com/sonu2002/sales-bi-dashboard" target="_blank" rel="noopener">Code ↗</a></div>
+        </div>
+      </article>
+
+      <article class="card half tilt reveal">
+        <div class="in3d">
+          <div class="ico">06</div><div class="kind">Machine learning</div>
           <h3>Corporate Insolvency Prediction</h3>
           <p>ML pipeline predicting company bankruptcy from 64 financial ratios, with class-imbalance handling, cross-validated model selection and threshold analysis.</p>
           <div class="metric">ROC AUC <b>0.979</b> · precision <b>0.95</b> on held-out data</div>
@@ -464,7 +519,7 @@ footer{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#5f5a5
 
       <article class="card half tilt reveal" style="--delay:.08s">
         <div class="in3d">
-          <div class="ico">02</div><div class="kind">Backend · Java</div>
+          <div class="ico">07</div><div class="kind">Backend · Java</div>
           <h3>Expense Tracker REST API</h3>
           <p>Production-style Spring Boot API: CRUD, filtering, pagination, validation, RFC 7807 errors, monthly summaries, Swagger docs, Docker + PostgreSQL.</p>
           <div class="metric"><b>10</b> automated tests · <b>~80%</b> coverage · CI on every push</div>
@@ -475,7 +530,7 @@ footer{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#5f5a5
 
       <article class="card tilt reveal">
         <div class="in3d">
-          <div class="ico">03</div><div class="kind">Data analysis</div>
+          <div class="ico">08</div><div class="kind">Data analysis</div>
           <h3>Online Retail Analysis</h3>
           <p>EDA of 541,909 e-commerce transactions answering 8 business questions: revenue drivers, customer concentration, returns and baskets.</p>
           <div class="ptags"><span>Python</span><span>pandas</span><span>Matplotlib</span></div>
@@ -485,7 +540,7 @@ footer{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#5f5a5
 
       <article class="card tilt reveal" style="--delay:.08s">
         <div class="in3d">
-          <div class="ico">04</div><div class="kind">Algorithms</div>
+          <div class="ico">09</div><div class="kind">Algorithms</div>
           <h3>LeetCode: <span class="lcN">1,190+</span> solved</h3>
           <p>309 easy · 652 medium · 224 hard. Java solutions are synced to GitHub automatically.</p>
           <div class="ptags"><span>Java</span><span>DSA</span></div>
@@ -495,7 +550,7 @@ footer{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#5f5a5
 
       <article class="card tilt reveal" style="--delay:.16s">
         <div class="in3d">
-          <div class="ico">05</div><div class="kind">Backend · Java</div>
+          <div class="ico">10</div><div class="kind">Backend · Java</div>
           <h3>Search Engine from Scratch</h3>
           <p>Jsoup web crawler indexing pages into MySQL, plus a Servlet/JSP app that ranks results and stores search history.</p>
           <div class="ptags"><span>Java</span><span>JDBC</span><span>MySQL</span></div>
@@ -678,7 +733,7 @@ void main(){
 
   /* ---------- 3D skill sphere ---------- */
   const sphere = document.getElementById("sphere");
-  const words = ["Python","SQL","Power BI","Excel","pandas","NumPy","scikit-learn","Jupyter","Machine Learning","Dashboards","Java","Spring Boot","REST API","PostgreSQL","React","JavaScript","Git","Docker","DSA","EDA","Statistics","GitHub Actions"];
+  const words = ["Python","SQL","Power BI","Excel","pandas","NumPy","scikit-learn","Jupyter","Machine Learning","Dashboards","Java","Spring Boot","REST API","PostgreSQL","React","JavaScript","Git","Docker","DSA","EDA","Statistics","GitHub Actions","RAG","LLMs","Forecasting","DuckDB","XAI","Cohorts"];
   const cols = ["#ebe6dd","#c9c2b6","#ebe6dd","#a59e92","#c4323a","#ebe6dd"];
   const nodes = words.map((w, i) => {
     const el = document.createElement("span"); el.textContent = w; el.style.color = cols[i % cols.length]; sphere.appendChild(el);
